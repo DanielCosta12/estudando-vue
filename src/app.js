@@ -1,10 +1,10 @@
-const { createApp } = Vue;
-
-createApp({
+const MyNameApp = {
   data() {
     return {
       name: "Daniel",
       age: 22,
     };
   },
-}).mount("#app");
+};
+
+Vue.createApp(MyNameApp).mount("#app");
