@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue!</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+        <p>{{msg}}</p>
+        <p>{{trueOrFalse}}</p>
+        <p>{{falseOrTrue}}</p>
+        <p>{{fruit[0]+" e "+ fruit[2]}}</p>
+        <p>{{student.name}} <br> {{student.email}}</p>
+        <p>{{number1 * 200}}</p>
+        <p>{{helloVue()}}</p>
+    </div>
+    <script>
+
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+
+                    // #armazenamento de dados no data
+                    msg: "Hello Vue!",
+                    trueOrFalse: true,
+                    falseOrTrue: false,
+                    fruit: ["Banana", "Uva", "Maça"],
+                    student: {
+                        name: "John Doe",
+                        email: "john.doe@gmail.com"
+                    },
+                    number1: 1,
+
+                }
+            }
+            ,
+            methods: {
+                helloVue() {
+                    return 'Fruit:' + this.fruit
+                }
+
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>
