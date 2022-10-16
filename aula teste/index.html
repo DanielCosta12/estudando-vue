@@ -10,6 +10,7 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
+
         <p>{{msg}}</p>
         <p>{{trueOrFalse}}</p>
         <p>{{falseOrTrue}}</p>
@@ -17,6 +18,12 @@
         <p>{{student.name}} <br> {{student.email}}</p>
         <p>{{number1 * 200}}</p>
         <p>{{helloVue()}}</p>
+        <p v-text="string"></p>
+        <div v-html="stringhtml">
+
+        </div>
+        <img v-bind:src="srcImg" v-bind:alt="title" v-bind:title="title">
+        <a v-bind:href="link">Olá</a>
     </div>
     <script>
 
@@ -26,27 +33,16 @@
                 return {
 
                     // #armazenamento de dados no data
-                    msg: "Hello Vue!",
-                    trueOrFalse: true,
-                    falseOrTrue: false,
-                    fruit: ["Banana", "Uva", "Maça"],
-                    student: {
-                        name: "John Doe",
-                        email: "john.doe@gmail.com"
-                    },
-                    number1: 1,
-
+                    msg: " Hello Vue!", trueOrFalse: true, falseOrTrue: false, fruit: ["Banana", "Uva", "Maça"],
+                    student: { name: "John Doe", email: "john.doe@gmail.com" }, number1: 1,
+                    srcImg: ' https://avatars.githubusercontent.com/u/6128107?s=200&v=4', title: 'Logo Vue',
+                    link: "https://avatars.githubusercontent.com/u/6128107?s=200&v=4", string: 'Hello, Vue!',
+                    stringhtml: '<h1>Hello</h1>'
                 }
+            }, methods: {
+                helloVue() { return 'Fruit:' + this.fruit }
             }
-            ,
-            methods: {
-                helloVue() {
-                    return 'Fruit:' + this.fruit
-                }
-
-            }
-        }).mount("#app")
-    </script>
+        }).mount("#app") </script>
 </body>
 
 </html>
