@@ -7,9 +7,6 @@ export default {
   name: "app",
   components: {
     Main,
-    components: {
-      Main,
-    },
   },
 };
 </script>
