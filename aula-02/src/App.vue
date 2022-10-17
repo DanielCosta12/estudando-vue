@@ -1,12 +1,15 @@
 <template>
-  <PrimeiroComponente />
+  <Main />
 </template>
 <script>
-import PrimeiroComponente from "./components/PrimeiroComponente.vue";
+import Main from "./components/Main.vue";
 export default {
   name: "app",
   components: {
-    PrimeiroComponente,
+    Main,
+    components: {
+      Main,
+    },
   },
 };
 </script>
