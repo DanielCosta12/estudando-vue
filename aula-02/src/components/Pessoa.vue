@@ -1,8 +1,15 @@
 <template>
   <div>
     <h1>Meu nome é {{ name }}</h1>
-    <p>Atualmente estou estudando:{{ languages[0] }}</p>
-    <p>Pretendo estudar:{{ languages.slice(1) }}</p>
+    <p>Atualmente estou estudando:{{currentLanguage}}</p>
+    <p>Pretendo estudar: 
+      <ul>
+       <li v-for="language in languages" v-bind:key="language">
+        {{language}}
+        
+       </li> 
+    </ul>
+  </p>
   </div>
 </template>
 <script>
@@ -12,14 +19,14 @@ export default {
   data() {
     return {
       name: "Daniel",
+      currentLanguage:"Vue",
       languages: [
-        "Vue",
         "Bootstrap",
         "Tailwind",
         "NextJS",
         "React",
         "ShellScript",
-        "C",
+        "C"
       ],
     };
   },
